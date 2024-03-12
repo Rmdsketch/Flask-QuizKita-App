@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="home-div">
+        <img src="{{ url_for('static', filename='images/home.png') }}" class="home-img">
+        <div class="info-div">
+            {% if g.user %}
+                <h1>Selamat Datang di Quiz Kita! {{ g.user.username.title() }}, </h1>
+            {% else %}
+                <h1>Selamat Datang di Quiz Kita!</h1>
+            {% endif %}
+            <h4>Jelajahi Aplikasi Quiz yang dirancang untuk menambah wawasan Anda!</h4>
+            <a href="{{ url_for('question', id=1)}}">Coba Test Sekarang</a>
+        </div>
+    </div>
+{% endblock %}
